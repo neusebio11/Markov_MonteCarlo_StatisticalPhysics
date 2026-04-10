@@ -74,7 +74,7 @@ Downhill moves are always accepted. Uphill moves are accepted with exponentially
 
 The dynamics is encoded in a $101 \times 101$ **column-stochastic transition matrix** $\mathbf{M}$:
 
-$$ M_{ij} = \begin{cases} \dfrac{1}{2n},A(j \to i) & \text{if } 1 \leq |i - j| \leq n \[6pt] 1 - \displaystyle\sum_{k \neq j} M_{kj} & \text{if } i = j \quad (\text{rejection / self-loop}) \[4pt] 0 & \text{otherwise} \end{cases} $$
+$$ M_{ij} = \left{\begin{array}{ll} \dfrac{1}{2n},A(j \to i) & \text{if } 1 \leq |i-j| \leq n \[8pt] 1 - \displaystyle\sum_{k \neq j} M_{kj} & \text{if } i = j \[8pt] 0 & \text{otherwise} \end{array}\right. $$
 
 Each column sums to 1. The distribution evolves as $\mathbf{P}_t = \mathbf{M}^t\,\mathbf{P}_0$.
 
