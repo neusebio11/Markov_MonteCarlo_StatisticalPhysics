@@ -75,10 +75,11 @@ Downhill moves are always accepted. Uphill moves are accepted with exponentially
 The dynamics is encoded in a $101 \times 101$ **column-stochastic transition matrix** $\mathbf{M}$:
 
 $$
-M_{ij} = \begin{cases}
-\dfrac{1}{2n}\,A(j \to i) & \text{if } 1 \leq |i - j| \leq n \\[6pt]
-1 - \displaystyle\sum_{k \neq j} M_{kj} & \text{if } i = j \quad (\text{rejection / self-loop}) \\[4pt]
-0 & \text{otherwise}
+M_{ij} =
+\begin{cases}
+\frac{1}{2n}\,A(j \to i) & \text{se } 1 \leq |i - j| \leq n \\[6pt]
+1 - \sum_{k \neq j} M_{kj} & \text{se } i = j \quad (\text{rejeição / self-loop}) \\[6pt]
+0 & \text{caso contrário}
 \end{cases}
 $$
 
@@ -106,7 +107,7 @@ $$
 
 Exactly one eigenvalue equals 1 (by ergodicity). All others are strictly less than 1 in modulus and their contributions decay to zero at long times.
 
-**Bi-orthonormality** $\mathbf{l}_\alpha \cdot \mathbf{r}_\beta = \delta_{\alpha\beta}$ is verified by computing $L^T R$ and checking it is the identity matrix:
+**Bi-orthonormality** ($\mathbf{l}_\alpha \cdot \mathbf{r}_\beta = \delta_{\alpha\beta}$) is verified by computing $L^{T} R$ and checking that it is the identity matrix.
 
 ![Orthonormality check n=1](figures/fig_10_02.png)
 
